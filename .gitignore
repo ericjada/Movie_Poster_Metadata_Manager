@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Project-specific
+config.json
+ffmpeg.exe
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.wmv
+*.jpg
+*.jpeg
+*.png
+thumbnails/
+processed_movies.csv
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+/Backups
+icon.ico
+Movie_Poster_Metadata_Manager.spec
