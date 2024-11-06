@@ -157,4 +157,5 @@ For support:
 
 ## Screenshots
 
-*(Add application screenshots here)*
+![Movie Poster Metadata Manager Interface](screenshots/screenshot1.png)
+*Main interface of the Movie Poster Metadata Manager showing the directory selection, FFmpeg configuration, and processing status.*
