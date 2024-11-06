@@ -157,7 +157,7 @@ For support:
 
 ## Demo Video
 
-<iframe src="https://drive.google.com/file/d/1F96SrEdkHtvA7PjIM0JqGrKJWb-Fz1ZD/preview" width="640" height="360" allow="autoplay"></iframe>
+[![Movie Poster Metadata Manager Demo](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/maxresdefault.jpg)](https://drive.google.com/file/d/1F96SrEdkHtvA7PjIM0JqGrKJWb-Fz1ZD/view?usp=sharing)
 
 *Video demonstration of the Movie Poster Metadata Manager in action*
 
