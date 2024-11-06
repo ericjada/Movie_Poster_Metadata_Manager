@@ -1,50 +1,64 @@
 # Movie Poster & Metadata Manager
 
-A Python application that automatically processes movie files by fetching metadata from IMDb, downloading movie posters, and setting them as video thumbnails.
+A Python application that automatically processes movie files by fetching metadata from IMDb through Cinemagoer, downloading movie posters, and setting them as video thumbnails.
 
 ## Features
 
-- 🎬 Fetches movie metadata from IMDb
+- 🎬 Fetches movie metadata using Cinemagoer (IMDbPY)
 - 🖼️ Downloads and sets movie posters as video thumbnails
-- 📝 Renames files to match IMDb titles
+- 📝 Renames files to match movie titles
 - 📊 Logs processing history in CSV format
 - ⚡ Multi-threaded processing
 - 🧪 Test file generation for demo purposes
 
-## Prerequisites
+## Dependencies
 
+This project relies on the following open-source libraries:
+
+### Core Dependencies
+- [Cinemagoer (IMDbPY)](https://cinemagoer.github.io/) - Python package for retrieving and managing IMDb movie information
+- [FFmpeg](https://ffmpeg.org/) - Complete, cross-platform solution for video processing
+- [Pillow (PIL)](https://python-pillow.org/) - Python Imaging Library for image processing
+- [Beautiful Soup 4](https://www.crummy.com/software/BeautifulSoup/) - Library for pulling data out of HTML and XML files
+- [Requests](https://docs.python-requests.org/en/latest/) - HTTP library for Python
+
+### GUI Dependencies
+- [Tkinter](https://docs.python.org/3/library/tkinter.html) - Standard GUI library for Python
+
+### Version Requirements
+```txt
+beautifulsoup4>=4.12.2
+Pillow>=10.0.0
+requests>=2.31.0
+cinemagoer>=2023.5.1
+```
+
+## Installation Options
+
+### Option 1: Executable (Windows)
+1. Download the latest release `.exe` file from the [Releases](https://github.com/yourusername/movie-poster-metadata-manager/releases) page
+2. Download FFmpeg:
+   - Visit [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
+   - Download the Windows build
+   - Extract the archive
+   - Note the path to `ffmpeg.exe` in the `bin` folder
+
+### Option 2: Python Source
+#### Prerequisites
 - Python 3.8+
 - FFmpeg installed on your system
 - Windows OS (for thumbnail functionality)
 
-### Required Python Packages
-
-```bash
-pip install requests pillow beautifulsoup4 cinemagoer urllib3
-```
-
-Or install all dependencies using requirements.txt:
+#### Required Python Packages
 ```bash
 pip install -r requirements.txt
 ```
 
-Note: Some packages like `tkinter` and `ctypes` come with Python's standard library.
-
-You should also create a requirements.txt file containing:
-```
-requests
-pillow
-beautifulsoup4
-cinemagoer
-urllib3
-```
-
-## Installation
-
+#### Setup from Source
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/movie-poster-manager.git
-cd movie-poster-manager
+git clone https://github.com/yourusername/movie-poster-metadata-manager.git
+cd movie-poster-metadata-manager
 ```
 
 2. Install dependencies:
@@ -52,118 +66,95 @@ cd movie-poster-manager
 pip install -r requirements.txt
 ```
 
-3. Download FFmpeg:
-   - Visit [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
-   - Download the Windows build
-   - Extract the archive
-   - Note the path to `ffmpeg.exe` in the `bin` folder
-
 ## Usage
 
+### Using the Executable
+1. Launch `Movie_Poster_Metadata_Manager.exe`
+2. Click "Set FFmpeg Path" and select your `ffmpeg.exe`
+3. Click "Browse" to select your movies folder
+4. Click "Start Processing"
+
+### Using Python Source
 1. Run the application:
 ```bash
-python movie_poster_scraper.py
+python Movie_Poster_Metadata_Manager.py
 ```
 
-2. In the application:
-   - Set the FFmpeg path using the "Set FFmpeg Path" button
-   - Click "Browse" to select a folder containing movie files
-   - Click "Create Test Files" to generate sample movies (optional)
-   - Click "Start Processing" to begin metadata fetching
+2. Follow the same steps as executable usage
+
+### First-Time Setup
+1. Set FFmpeg path using the "Set FFmpeg Path" button
+2. The path will be saved for future use
+
+### Processing Movies
+1. Select a folder containing movie files
+2. (Optional) Create test files using "Create Test Files"
+3. Click "Start Processing"
+4. Monitor progress in the status window
 
 ### Supported File Formats
-
 - MP4 (.mp4)
 - MKV (.mkv)
 - AVI (.avi)
 - MOV (.mov)
 - WMV (.wmv)
 
-### Processing Steps
-
-1. Scans selected directory for video files
-2. Extracts movie title from filename
-3. Searches IMDb for movie metadata
-4. Downloads movie poster
-5. Sets poster as video thumbnail
-6. Renames file to match IMDb title
-7. Logs processing details to CSV
-
-## File Structure
-
-```
-movie-poster-manager/
-├── Movie_Poster_Metadata_Manager.py  # Main application
-├── create_test_files.py              # Test file generator
-├── config.json                       # FFmpeg path configuration
-├── requirements.txt                  # Python dependencies
-└── README.md                         # Documentation
-```
-
 ## Generated Files
 
 The application creates:
+- `thumbnails/` directory containing movie posters
+- `processed_movies.csv` log file with detailed metadata
+- `config.json` storing FFmpeg path
 
-- `thumbnails/` directory in the processed folder containing:
-  - Movie poster images (.jpg)
-  - Named according to movie titles
-- `processed_movies.csv` log file containing:
-  - Original filename
-  - New filename
-  - Processing date
-  - Movie title
-  - Year
-  - Directors (semicolon separated)
-  - Genres (semicolon separated)
-  - IMDb rating
-- `config.json` storing FFmpeg path configuration
+## Troubleshooting
 
-## Error Handling
+1. FFmpeg Issues:
+   - Ensure FFmpeg is properly downloaded and extracted
+   - Verify the path in "Set FFmpeg Path" points to `ffmpeg.exe`
+   - Check the status window for FFmpeg-related errors
 
-- Validates FFmpeg installation
-- Skips previously processed files
-- Logs errors in the status window
-- Maintains original files until processing succeeds
+2. Processing Issues:
+   - Verify internet connection for Cinemagoer API access
+   - Ensure write permissions in the movie folder
+   - Check the status window for detailed error messages
 
-## Contributing
+3. Common Problems:
+   - "FFmpeg not found": Reset the FFmpeg path
+   - "Permission denied": Run as administrator
+   - "No poster found": Check movie filename accuracy
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+## Disclaimer
+
+This software is provided "as is" without warranty of any kind, either express or implied. Use at your own risk.
+
+- This application is an independent project and is not affiliated with, endorsed by, or connected to IMDb, Cinemagoer, Amazon, or any movie studios.
+- Movie metadata and poster images are fetched using the Cinemagoer library for personal use only. Users are responsible for ensuring their use of this data complies with Cinemagoer's and IMDb's terms of service and applicable copyright laws.
+- The developers are not responsible for:
+  - Any damage to files or systems caused by the use of this software
+  - The accuracy of metadata retrieved through Cinemagoer
+  - Any copyright infringement resulting from the use of downloaded images or metadata
+  - Issues arising from incorrect file naming or metadata matching
+  - Data loss during file renaming or processing
+
+By using this software, you acknowledge that:
+1. You have backup copies of any files you process with this tool
+2. You are using the software for personal, non-commercial use
+3. You accept all risks associated with automated file renaming and metadata modification
+
+For commercial use or integration, please review Cinemagoer's and IMDb's terms of service and obtain necessary permissions.
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
+## Support
 
-- IMDb data provided by IMDbPY
-- FFmpeg for video processing
-- Movie data from IMDb (www.imdb.com)
+For support:
+1. Check the Instructions tab in the application
+2. Review troubleshooting steps in this README
+3. Open an issue on GitHub
+4. Contact the maintainers
 
 ## Screenshots
 
-*(Add screenshots of your application here)*
-
-## Known Issues
-
-- Thumbnail functionality is Windows-specific
-- Some movie titles may not be correctly parsed from filenames
-- FFmpeg path must be set manually on first run
-- Movie title matching depends on filename accuracy
-- Large files may take longer to process
-- Some IMDb metadata might be incomplete
-
-## Future Improvements
-
-- [ ] Cross-platform thumbnail support
-- [ ] Batch processing optimization
-- [ ] Additional metadata sources
-- [ ] Custom naming templates
-- [ ] Video format conversion options
-
-## Support
-
-For support, please open an issue in the GitHub repository or contact the maintainers.
+*(Add application screenshots here)*
