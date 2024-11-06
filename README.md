@@ -36,7 +36,7 @@ cinemagoer>=2023.5.1
 ## Installation Options
 
 ### Option 1: Executable (Windows)
-1. Download the latest release `.exe` file from the [Releases](https://github.com/yourusername/movie-poster-metadata-manager/releases) page
+1. Download the latest release `.exe` file from the [Releases](https://github.com/ericjada/Movie_Poster_Metadata_Manager/releases) page
 2. Download FFmpeg:
    - Visit [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
    - Download the Windows build
@@ -57,8 +57,8 @@ pip install -r requirements.txt
 #### Setup from Source
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/movie-poster-metadata-manager.git
-cd movie-poster-metadata-manager
+git clone https://github.com/ericjada/Movie_Poster_Metadata_Manager.git
+cd Movie_Poster_Metadata_Manager
 ```
 
 2. Install dependencies:
