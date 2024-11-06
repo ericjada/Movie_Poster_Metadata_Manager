@@ -155,6 +155,12 @@ For support:
 3. Open an issue on GitHub
 4. Contact the maintainers
 
+## Demo Video
+
+<iframe src="https://drive.google.com/file/d/1F96SrEdkHtvA7PjIM0JqGrKJWb-Fz1ZD/preview" width="640" height="360" allow="autoplay"></iframe>
+
+*Video demonstration of the Movie Poster Metadata Manager in action*
+
 ## Screenshots
 
 ![Movie Poster Metadata Manager Interface](screenshots/screenshot1.png)
